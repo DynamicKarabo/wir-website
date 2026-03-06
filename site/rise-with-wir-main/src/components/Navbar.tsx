@@ -41,9 +41,9 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         <Link to="/" className="flex items-center group">
           <img 
-            src="/logo.svg" 
+            src={scrolled ? "/original-logo-transparent.png" : "/logo.svg"} 
             alt="Women in Resilience Logo" 
-            className="h-24 sm:h-32 md:h-48 lg:h-64 w-auto object-contain transition-transform group-hover:scale-105 duration-300 drop-shadow-sm"
+            className="h-24 sm:h-32 md:h-48 lg:h-64 w-auto object-contain transition-all duration-500 drop-shadow-sm group-hover:scale-105"
           />
         </Link>
 
