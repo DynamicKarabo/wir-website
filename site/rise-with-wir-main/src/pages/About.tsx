@@ -1,118 +1,86 @@
 import PageHero from "@/components/PageHero";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Shield, Users, Gem, Eye, Target, BookOpen } from "lucide-react";
+import { Heart, Shield, Users, Compass, Anchor, Sparkles } from "lucide-react";
 
 const values = [
-  { icon: Heart, title: "Faith", desc: "Grounded in love and spiritual strength." },
-  { icon: Shield, title: "Resilience", desc: "Building strength to overcome adversity." },
-  { icon: Users, title: "Community", desc: "Empowerment through togetherness." },
-  { icon: Gem, title: "Dignity", desc: "Every woman deserves respect and honor." },
-  { icon: BookOpen, title: "Integrity", desc: "Transparent and accountable in all we do." },
-  { icon: Eye, title: "Compassion", desc: "Walking alongside those in need with empathy." },
-];
-
-const milestones = [
-  { year: "2015", event: "Founded with a vision to support widowed women in Nairobi." },
-  { year: "2017", event: "Launched the first Widow Support Group program serving 50 women." },
-  { year: "2019", event: "Expanded Skills Training to 3 communities across Kenya." },
-  { year: "2021", event: "Reached 1,000 women through faith and community programs." },
-  { year: "2023", event: "Established partnerships with 40+ organizations worldwide." },
-  { year: "2025", event: "Serving 2,500+ women across 45 communities." },
+  { icon: Shield, title: "Resilience", desc: "Empowering women to overcome challenges with strength." },
+  { icon: Heart, title: "Faith", desc: "Trusting in spiritual guidance and hope." },
+  { icon: Users, title: "Support", desc: "Creating safe spaces where women uplift one another." },
+  { icon: Anchor, title: "Unity", desc: "Building strong communities of encouragement." },
+  { icon: Compass, title: "Courage", desc: "Helping women face adversity with confidence." },
 ];
 
 const About = () => (
   <div className="min-h-screen">
-    <PageHero title="About Us" subtitle="Our story of faith, resilience, and community impact." />
+    <PageHero 
+      title="About Women in Resilience" 
+      subtitle="Faith · Resilience · Community connection." 
+    />
 
-    {/* Our Story */}
-    <section className="section-padding">
-      <div className="container mx-auto max-w-4xl">
+    {/* Opening Section */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto max-w-4xl text-center">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-8">Our Story</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Women in Resilience was born from a deep conviction that no woman should face the challenges of widowhood or vulnerability alone. Founded in 2015, our journey began in the heart of Nairobi, where a small group of women came together to support each other through faith and fellowship.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            What started as weekly gatherings has grown into a comprehensive ministry reaching thousands of women across Kenya and beyond. Today, WIR stands as a testament to the power of community, faith, and the unbreakable spirit of resilient women.
+          <h2 className="text-4xl md:text-5xl font-heading font-black mb-8">Guided by Faith, Driven by Purpose</h2>
+          <p className="text-xl text-muted-foreground leading-relaxed mb-6">
+            Women in Resilience (WIR) is a faith-centered nonprofit organization dedicated to empowering women facing adversity. Inspired by scripture and community support, WIR provides guidance, encouragement, and practical programs to help women rebuild their lives.
           </p>
         </AnimatedSection>
-      </div>
-    </section>
-
-    {/* Timeline */}
-    <section className="section-padding bg-muted">
-      <div className="container mx-auto max-w-3xl">
-        <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Our Journey</h2>
-        </AnimatedSection>
-        <div className="space-y-0 relative">
-          <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2" />
-          {milestones.map((m, i) => (
-            <AnimatedSection key={m.year} delay={i * 100}>
-              <div className={`relative flex items-start gap-6 pb-10 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                <div className="absolute left-[22px] md:left-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background -translate-x-1/2 z-10" />
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                  <span className="text-sm font-semibold text-secondary">{m.year}</span>
-                  <p className="text-foreground mt-1">{m.event}</p>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
       </div>
     </section>
 
     {/* Mission & Vision */}
-    <section className="section-padding">
-      <div className="container mx-auto max-w-5xl">
-        <div className="grid md:grid-cols-2 gap-8">
-          <AnimatedSection>
-            <Card className="h-full border-none shadow-sm bg-primary/5">
-              <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
-                  <Target className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl font-heading font-semibold mb-3">Our Mission</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  To empower widowed and vulnerable women through holistic faith-based programs, practical skills training, and community building — restoring dignity and creating pathways to self-sufficiency.
-                </p>
-              </CardContent>
-            </Card>
+    <section className="section-padding bg-hope-bg/30">
+      <div className="container mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <AnimatedSection direction="right">
+            <div className="bg-white p-12 rounded-[2.5rem] shadow-xl border-none h-full relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] transition-all group-hover:scale-110" />
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-lg shadow-primary/20">
+                <Heart className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-heading font-black mb-6">Our Mission</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                To create a compassionate community where women receive support, spiritual encouragement, and practical resources to rebuild their lives.
+              </p>
+            </div>
           </AnimatedSection>
-          <AnimatedSection delay={150}>
-            <Card className="h-full border-none shadow-sm bg-secondary/5">
-              <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-5">
-                  <Eye className="w-7 h-7 text-secondary" />
-                </div>
-                <h3 className="text-2xl font-heading font-semibold mb-3">Our Vision</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  A world where every widowed and vulnerable woman is empowered to live with dignity, purpose, and hope — thriving as a valued member of her community.
-                </p>
-              </CardContent>
-            </Card>
+          <AnimatedSection direction="left" delay={200}>
+            <div className="bg-white p-12 rounded-[2.5rem] shadow-xl border-none h-full relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-[5rem] transition-all group-hover:scale-110" />
+              <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-8 shadow-lg shadow-secondary/20">
+                <Sparkles className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-heading font-black mb-6">Our Vision</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                Empowering women to rise above adversity, rediscover strength through faith, and reflect hope within their communities.
+              </p>
+            </div>
           </AnimatedSection>
         </div>
       </div>
     </section>
 
     {/* Core Values */}
-    <section className="section-padding bg-warm">
-      <div className="container mx-auto max-w-5xl">
+    <section className="section-padding">
+      <div className="container mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Our Core Values</h2>
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-heading font-black mb-6">Our Core Values</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">The principles that guide every interaction and program at Women in Resilience.</p>
+          </div>
         </AnimatedSection>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {values.map((v, i) => (
             <AnimatedSection key={v.title} delay={i * 100}>
-              <Card className="h-full text-center border-none shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <v.icon className="w-6 h-6 text-primary" />
+              <Card className="h-full text-center border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-[2rem] bg-white group overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <v.icon className="w-7 h-7 text-primary group-hover:text-white" />
                   </div>
-                  <h3 className="font-heading font-semibold mb-1">{v.title}</h3>
-                  <p className="text-sm text-muted-foreground">{v.desc}</p>
+                  <h3 className="text-lg font-heading font-black mb-3">{v.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
                 </CardContent>
               </Card>
             </AnimatedSection>
