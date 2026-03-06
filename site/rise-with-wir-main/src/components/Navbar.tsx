@@ -46,11 +46,11 @@ const Navbar = () => {
           <div className="flex flex-col leading-tight">
             <span className={cn(
               "font-heading font-bold text-xl transition-colors duration-300",
-              scrolled ? "text-foreground" : "text-primary-foreground md:text-foreground"
+              scrolled ? "text-foreground" : "text-white"
             )}>WIR</span>
             <span className={cn(
               "text-[10px] tracking-[0.2em] uppercase font-medium transition-colors duration-300",
-              scrolled ? "text-muted-foreground" : "text-primary-foreground/70 md:text-muted-foreground"
+              scrolled ? "text-muted-foreground" : "text-white/80"
             )}>Women in Resilience</span>
           </div>
         </Link>
@@ -64,10 +64,10 @@ const Navbar = () => {
               className={cn(
                 "px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300",
                 location.pathname === l.to
-                  ? "text-primary bg-primary/5"
+                  ? (scrolled ? "text-primary bg-primary/5" : "text-white bg-white/20")
                   : scrolled 
                     ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                    : "text-primary-foreground/80 md:text-muted-foreground hover:text-primary md:hover:bg-primary/5"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
               )}
             >
               {l.label}
@@ -83,7 +83,7 @@ const Navbar = () => {
           onClick={() => setOpen(!open)}
           className={cn(
             "lg:hidden p-2 rounded-xl transition-colors",
-            scrolled ? "text-foreground hover:bg-accent" : "text-primary-foreground md:text-foreground hover:bg-white/10"
+            scrolled ? "text-foreground hover:bg-accent" : "text-white hover:bg-white/10"
           )}
           aria-label="Toggle menu"
         >
