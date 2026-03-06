@@ -43,7 +43,7 @@ const Navbar = () => {
           <img 
             src="/logo.svg" 
             alt="Women in Resilience Logo" 
-            className="h-20 md:h-28 lg:h-32 w-auto object-contain transition-transform group-hover:scale-105 duration-300 drop-shadow-sm"
+            className="h-24 sm:h-32 md:h-48 lg:h-64 w-auto object-contain transition-transform group-hover:scale-105 duration-300 drop-shadow-sm"
           />
         </Link>
 
