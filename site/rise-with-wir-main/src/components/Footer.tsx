@@ -41,9 +41,16 @@ const Footer = () => (
               { to: "/leadership", label: "Leadership" },
               { to: "/partner", label: "Partner With Us" },
               { to: "/contact", label: "Contact" },
+              { to: "/profile.pdf", label: "Company Profile", external: true },
             ].map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="hover:text-secondary transition-colors">{l.label}</Link>
+                {l.external ? (
+                  <a href={l.to} target="_blank" rel="noreferrer" className="hover:text-secondary transition-colors">
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link to={l.to} className="hover:text-secondary transition-colors">{l.label}</Link>
+                )}
               </li>
             ))}
           </ul>
