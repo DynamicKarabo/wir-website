@@ -8,19 +8,19 @@ const leaders = [
     name: "Nonhlanhla Abegail Mokoroane",
     role: "Visionary and Operations Director",
     description: "Widowed at 34, she raised two children and discovered healing through faith and community. Her journey inspired the founding of Women in Resilience.",
-    image: "/leadership_portrait_1772813739989.png"
+    image: "/nonhlanhla.jpg"
   },
   {
     name: "Zinhle Mkhabela",
     role: "Administrative and Project Management Director",
     description: "Oversees organizational administration and ensures projects are effectively planned and executed with precision and care.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+    image: "/zinhle.jpg"
   },
   {
     name: "Shadrack Mokoroane",
     role: "Multimedia and Marketing Director",
     description: "Leads marketing strategy, digital storytelling, and communication to expand WIR's reach and engagement across all platforms.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"
+    image: "/shadrack.jpg"
   }
 ];
 
