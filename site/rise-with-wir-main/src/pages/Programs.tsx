@@ -1,114 +1,115 @@
 import PageHero from "@/components/PageHero";
 import AnimatedSection from "@/components/AnimatedSection";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Sparkles, Users, BookOpen, Handshake, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Users, BookOpen, Shield, Globe, ArrowRight, CheckCircle, Handshake } from "lucide-react";
 
 const programs = [
   {
+    icon: Sparkles,
+    title: "Resilience Workshops",
+    description: "Interactive workshops focused on emotional healing, self-care, and personal growth. Our sessions provide practical tools to navigate life's toughest transitions.",
+    color: "bg-primary/10",
+    iconColor: "text-primary"
+  },
+  {
     icon: Users,
-    title: "Widow Support Groups",
-    desc: "Safe, nurturing spaces where widowed women gather for fellowship, emotional support, and shared healing. Our groups provide a foundation of belonging and mutual encouragement.",
-    features: ["Weekly group meetings", "Peer mentoring", "Grief support sessions", "Community celebrations"],
+    title: "Community Support Groups",
+    description: "Faith-based support groups where women share their stories, receive encouragement, and build lasting bonds in a safe, compassionate environment.",
+    color: "bg-secondary/10",
+    iconColor: "text-secondary"
   },
   {
     icon: BookOpen,
-    title: "Skills Training & Empowerment",
-    desc: "Equipping women with practical skills in entrepreneurship, financial literacy, tailoring, agriculture, and more — enabling them to build sustainable livelihoods.",
-    features: ["Business training workshops", "Financial literacy classes", "Vocational skills", "Micro-enterprise support"],
+    title: "Empowerment Resources",
+    description: "Free materials including devotionals, guides, and inspirational stories designed to nourish the spirit and provide daily encouragement.",
+    color: "bg-primary/10",
+    iconColor: "text-primary"
   },
   {
-    icon: Shield,
-    title: "Faith & Counseling",
-    desc: "Providing spiritual guidance, professional counseling, and holistic healing to help women process trauma, rebuild confidence, and rediscover purpose.",
-    features: ["One-on-one counseling", "Bible study groups", "Spiritual retreats", "Prayer support networks"],
-  },
-  {
-    icon: Globe,
-    title: "Community Outreach",
-    desc: "Extending our reach into underserved communities through health education, advocacy, and awareness campaigns that break stigma and create lasting change.",
-    features: ["Health awareness campaigns", "Advocacy and rights education", "Community partnerships", "Youth mentorship"],
-  },
-];
-
-const steps = [
-  { num: "01", title: "Identify", desc: "We identify widowed and vulnerable women in communities across Kenya." },
-  { num: "02", title: "Welcome", desc: "Women are welcomed into supportive groups and connected with resources." },
-  { num: "03", title: "Empower", desc: "Through programs, training, and counseling, women gain skills and confidence." },
-  { num: "04", title: "Transform", desc: "Women become leaders and advocates, transforming their communities." },
+    icon: Handshake,
+    title: "Outreach Initiatives",
+    description: "Community partnerships providing mentorship, events, and practical assistance to women in need throughout the region.",
+    color: "bg-secondary/10",
+    iconColor: "text-secondary"
+  }
 ];
 
 const Programs = () => (
   <div className="min-h-screen">
-    <PageHero title="Our Programs" subtitle="Holistic programs designed to restore hope and build resilience." />
+    <PageHero 
+      title="Programs That Restore Strength" 
+      subtitle="We walk beside you on the journey to healing and hope." 
+    />
 
-    {/* Programs Grid */}
-    <section className="section-padding">
-      <div className="container mx-auto max-w-5xl space-y-10">
-        {programs.map((p, i) => (
-          <AnimatedSection key={p.title} delay={i * 100}>
-            <Card className="border-none shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <CardContent className="p-0">
-                <div className="flex flex-col md:flex-row">
-                  <div className="w-full md:w-1/3 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center p-10">
-                    <p.icon className="w-20 h-20 text-primary/60" />
+    {/* Featured Programs Grid */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {programs.map((p, i) => (
+            <AnimatedSection key={p.title} delay={i * 100} direction={i % 2 === 0 ? "right" : "left"}>
+              <Card className="h-full border-none shadow-xl hover:shadow-2xl transition-all duration-500 rounded-[2.5rem] bg-white group overflow-hidden">
+                <CardContent className="p-10 flex flex-col h-full">
+                  <div className={`w-16 h-16 rounded-2xl ${p.color} flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                    <p.icon className={`w-8 h-8 ${p.iconColor}`} />
                   </div>
-                  <div className="flex-1 p-8">
-                    <h3 className="text-2xl font-heading font-semibold mb-3">{p.title}</h3>
-                    <p className="text-muted-foreground mb-5 leading-relaxed">{p.desc}</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {p.features.map((f) => (
-                        <div key={f} className="flex items-center gap-2 text-sm text-foreground">
-                          <CheckCircle className="w-4 h-4 text-primary shrink-0" /> {f}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </AnimatedSection>
-        ))}
-      </div>
-    </section>
-
-    {/* How We Help */}
-    <section className="section-padding bg-muted">
-      <div className="container mx-auto max-w-5xl">
-        <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">How We Help</h2>
-        </AnimatedSection>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {steps.map((s, i) => (
-            <AnimatedSection key={s.num} delay={i * 150}>
-              <div className="text-center">
-                <div className="text-5xl font-heading font-bold text-secondary/30 mb-3">{s.num}</div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">{s.desc}</p>
-              </div>
+                  <h3 className="text-3xl font-heading font-black mb-6">{p.title}</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-8 flex-grow">
+                    {p.description}
+                  </p>
+                  <Button variant="link" className="p-0 h-auto text-primary font-bold text-lg group-hover:translate-x-2 transition-transform">
+                    Learn More <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
             </AnimatedSection>
           ))}
         </div>
       </div>
     </section>
 
-    {/* CTA */}
-    <section className="section-padding">
-      <div className="container mx-auto text-center max-w-2xl">
-        <AnimatedSection>
-          <Handshake className="w-10 h-10 text-secondary mx-auto mb-4" />
-          <h2 className="text-3xl font-heading font-bold mb-4">Get Involved</h2>
-          <p className="text-muted-foreground mb-6">Whether you want to volunteer your time or support a program, there's a place for you in our mission.</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link to="/partner">Partner With Us <ArrowRight className="w-4 h-4 ml-1" /></Link>
+    {/* Community Imagery Section */}
+    <section className="py-24 bg-hope-bg/30">
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-16 max-w-7xl mx-auto">
+          <AnimatedSection direction="right" className="w-full lg:w-1/2">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-secondary/10 rounded-[3rem] -rotate-2" />
+              <img 
+                src="/programs_women_gathering_1772813913345.png" 
+                alt="Women gathering in community" 
+                className="relative rounded-[2.5rem] shadow-2xl w-full h-[600px] object-cover"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection direction="left" className="w-full lg:w-1/2">
+            <h2 className="text-4xl md:text-6xl font-heading font-black mb-8 leading-tight">
+              A Safe Space to <span className="text-primary">Grow Together</span>
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed mb-10">
+              Our programs are more than just services; they are invitations to join a sisterhood. Whether you're seeking emotional healing, spiritual growth, or practical mentorship, you'll find a community ready to welcome you with open arms.
+            </p>
+            <div className="space-y-6 mb-12">
+              {[
+                "Faith-centered approach to healing",
+                "Small, intimate support circles",
+                "Mentorship from experienced leaders",
+                "Resources you can access anywhere"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                    <Sparkles className="w-4 h-4 text-secondary" />
+                  </div>
+                  <span className="text-lg font-medium text-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+            <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 px-10 py-8 rounded-2xl font-black text-xl shadow-xl">
+              <Link to="/contact">Join a Support Group</Link>
             </Button>
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10">
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
   </div>
