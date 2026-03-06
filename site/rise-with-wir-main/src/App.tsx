@@ -11,6 +11,7 @@ import Programs from "./pages/Programs";
 import Leadership from "./pages/Leadership";
 import Partner from "./pages/Partner";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/leadership" element={<Leadership />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
