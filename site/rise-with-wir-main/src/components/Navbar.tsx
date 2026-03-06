@@ -43,7 +43,7 @@ const Navbar = () => {
           <img 
             src="/navbar_logo.png" 
             alt="Women in Resilience Logo" 
-            className="w-12 h-12 object-contain transition-transform group-hover:scale-105 duration-300"
+            className="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
           />
           <div className="flex flex-col leading-tight">
             <span className={cn(
