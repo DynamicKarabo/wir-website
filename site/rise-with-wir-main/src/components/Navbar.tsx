@@ -32,48 +32,59 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border"
-          : "bg-transparent"
+          ? "bg-background/80 backdrop-blur-xl shadow-lg border-b border-border/50 py-2"
+          : "bg-transparent py-4"
       )}
     >
-      <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-bold text-lg">W</span>
+      <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center transition-transform group-hover:scale-105 duration-300">
+            <span className="text-primary-foreground font-heading font-bold text-xl">W</span>
           </div>
           <div className="flex flex-col leading-tight">
-            <span className={cn("font-heading font-bold text-lg", scrolled ? "text-foreground" : "text-primary-foreground md:text-foreground")}>WIR</span>
-            <span className={cn("text-[10px] tracking-wider uppercase", scrolled ? "text-muted-foreground" : "text-primary-foreground/70 md:text-muted-foreground")}>Women in Resilience</span>
+            <span className={cn(
+              "font-heading font-bold text-xl transition-colors duration-300",
+              scrolled ? "text-foreground" : "text-primary-foreground md:text-foreground"
+            )}>WIR</span>
+            <span className={cn(
+              "text-[10px] tracking-[0.2em] uppercase font-medium transition-colors duration-300",
+              scrolled ? "text-muted-foreground" : "text-primary-foreground/70 md:text-muted-foreground"
+            )}>Women in Resilience</span>
           </div>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-2">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               className={cn(
-                "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                "px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300",
                 location.pathname === l.to
-                  ? "text-primary bg-primary/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                  ? "text-primary bg-primary/5"
+                  : scrolled 
+                    ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    : "text-primary-foreground/80 md:text-muted-foreground hover:text-primary md:hover:bg-primary/5"
               )}
             >
               {l.label}
             </Link>
           ))}
-          <Button className="ml-3 bg-secondary text-secondary-foreground hover:bg-secondary/90" size="sm">
-            <Heart className="w-4 h-4 mr-1" /> Donate
+          <Button className="ml-4 bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-xl px-6 font-bold shadow-md hover:shadow-lg transition-all" size="sm">
+            <Heart className="w-4 h-4 mr-2" /> Donate
           </Button>
         </div>
 
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-md text-foreground"
+          className={cn(
+            "lg:hidden p-2 rounded-xl transition-colors",
+            scrolled ? "text-foreground hover:bg-accent" : "text-primary-foreground md:text-foreground hover:bg-white/10"
+          )}
           aria-label="Toggle menu"
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -82,14 +93,14 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-background border-t border-border shadow-lg">
-          <div className="flex flex-col p-4 gap-1">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="flex flex-col p-6 gap-2">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 className={cn(
-                  "px-4 py-3 rounded-md text-sm font-medium transition-colors",
+                  "px-4 py-3 rounded-2xl text-base font-semibold transition-colors",
                   location.pathname === l.to
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent"
@@ -98,8 +109,8 @@ const Navbar = () => {
                 {l.label}
               </Link>
             ))}
-            <Button className="mt-2 bg-secondary text-secondary-foreground hover:bg-secondary/90">
-              <Heart className="w-4 h-4 mr-1" /> Donate
+            <Button className="mt-4 bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-2xl py-6 text-lg font-bold shadow-lg">
+              <Heart className="w-5 h-5 mr-2" /> Donate Now
             </Button>
           </div>
         </div>
