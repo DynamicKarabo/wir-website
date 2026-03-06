@@ -39,22 +39,12 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center group">
           <img 
             src="/logo.svg" 
             alt="Women in Resilience Logo" 
-            className="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105 duration-300 drop-shadow-sm"
+            className="h-20 md:h-28 lg:h-32 w-auto object-contain transition-transform group-hover:scale-105 duration-300 drop-shadow-sm"
           />
-          <div className="flex flex-col leading-tight">
-            <span className={cn(
-              "font-heading font-bold text-xl transition-colors duration-300",
-              scrolled ? "text-foreground" : "text-white"
-            )}>WIR</span>
-            <span className={cn(
-              "text-[10px] tracking-[0.2em] uppercase font-medium transition-colors duration-300",
-              scrolled ? "text-muted-foreground" : "text-white/80"
-            )}>Women in Resilience</span>
-          </div>
         </Link>
 
         {/* Desktop */}
