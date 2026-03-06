@@ -46,37 +46,51 @@ const programs = [
 const Index = () => (
   <div className="min-h-screen">
     {/* Hero */}
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary/70" />
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E\")" }} />
-      <div className="relative container mx-auto px-4 text-center max-w-4xl">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img 
+          src="/hero_women_support_1772813700782.png" 
+          alt="Women supporting each other" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-background/90 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
+      
+      <div className="relative container mx-auto px-4 text-center max-w-5xl">
         <AnimatedSection>
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-6 border border-secondary/30">
+          <span className="inline-block px-6 py-2 rounded-2xl bg-secondary/20 text-secondary text-sm font-bold tracking-widest uppercase mb-8 backdrop-blur-sm border border-secondary/30">
             Faith · Resilience · Community
           </span>
         </AnimatedSection>
         <AnimatedSection delay={100}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6">
-            Empowering Women Through Faith & Resilience
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[1.1] mb-8 drop-shadow-sm">
+            Together in Grief.<br />
+            <span className="text-secondary">Together in Strength.</span>
           </h1>
         </AnimatedSection>
         <AnimatedSection delay={200}>
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-            Supporting widowed and vulnerable women to rebuild their lives with dignity, hope, and community.
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6 leading-relaxed font-medium">
+            Women in Resilience empowers widows and vulnerable women to rebuild their lives through faith, community, and resilience.
           </p>
         </AnimatedSection>
         <AnimatedSection delay={300}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base px-8">
-              <Link to="/partner">Partner With Us <Handshake className="w-5 h-5 ml-1" /></Link>
+          <p className="text-lg md:text-xl text-secondary italic font-serif mb-12 drop-shadow-sm">
+            “A bruised reed he will not break.” – Matthew 12:20
+          </p>
+        </AnimatedSection>
+        <AnimatedSection delay={400}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-10 py-7 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+              <Link to="/contact">Join Our Community</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8">
-              <Link to="/about">Learn More <ArrowRight className="w-5 h-5 ml-1" /></Link>
+            <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-10 py-7 rounded-2xl font-bold backdrop-blur-sm transition-all hover:border-white/60">
+              <Link to="/partner">Partner With Us <Handshake className="w-6 h-6 ml-2" /></Link>
             </Button>
           </div>
         </AnimatedSection>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
 
     {/* Mission */}
