@@ -39,10 +39,10 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
-        <Link to="/" className="group flex items-center justify-center shrink-0">
-          <img 
-            src={scrolled ? "/original_logo_transparent.png" : "/logo.svg"} 
-            alt="Women in Resilience Logo" 
+        <Link to="/" className="group flex items-center shrink-0">
+          <img
+            src={scrolled ? "/original_logo_transparent.png" : "/logo.svg"}
+            alt="Women in Resilience Logo"
             className={cn(
               "w-auto object-contain transition-all duration-500 drop-shadow-sm group-hover:scale-105 origin-top-left",
               scrolled 
@@ -62,7 +62,7 @@ const Navbar = () => {
                 "px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300",
                 location.pathname === l.to
                   ? (scrolled ? "text-primary bg-primary/5" : "text-white bg-white/20")
-                  : scrolled 
+                  : scrolled
                     ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
                     : "text-white/80 hover:text-white hover:bg-white/10"
               )}
