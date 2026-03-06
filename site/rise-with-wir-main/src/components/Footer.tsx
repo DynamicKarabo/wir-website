@@ -16,7 +16,7 @@ const Footer = () => (
             <span className="font-heading font-bold text-xl">Women in Resilience</span>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
-            Empowering widowed and vulnerable women through faith, support, and community programs.
+            Empowering Women. Strengthening Faith. Building Resilience.
           </p>
           <div className="flex gap-3 mt-4">
             <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook">
@@ -53,9 +53,9 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-lg mb-4">Contact Us</h4>
           <ul className="space-y-3 text-sm text-primary-foreground/70">
-            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" /> 123 Hope Avenue, Nairobi, Kenya</li>
-            <li className="flex items-center gap-2"><Phone className="w-4 h-4 shrink-0" /> +254 700 000 000</li>
-            <li className="flex items-center gap-2"><Mail className="w-4 h-4 shrink-0" /> info@womeninresilience.org</li>
+            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" /> 28A Caledon Drive, Norkem Park Ext 4, Kempton Park, Gauteng, 1618</li>
+            <li className="flex items-center gap-2"><Phone className="w-4 h-4 shrink-0" /> 061 138 2660</li>
+            <li className="flex items-center gap-2"><Mail className="w-4 h-4 shrink-0" /> womeninresilience@gmail.com</li>
           </ul>
         </div>
 
