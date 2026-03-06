@@ -40,9 +40,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center transition-transform group-hover:scale-105 duration-300">
-            <span className="text-primary-foreground font-heading font-bold text-xl">W</span>
-          </div>
+          <img 
+            src="/navbar_logo.png" 
+            alt="Women in Resilience Logo" 
+            className="w-12 h-12 object-contain transition-transform group-hover:scale-105 duration-300"
+          />
           <div className="flex flex-col leading-tight">
             <span className={cn(
               "font-heading font-bold text-xl transition-colors duration-300",
