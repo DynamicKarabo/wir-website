@@ -235,24 +235,61 @@ const Index = () => (
       </div>
     </section>
 
-    {/* CTA Banner */}
-    <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
+    {/* Leadership Highlight */}
+    <section className="section-padding bg-hope-bg/30">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20 max-w-6xl mx-auto">
+          <AnimatedSection direction="right" className="w-full md:w-2/5">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-primary/10 rounded-[3rem] rotate-3 group-hover:rotate-6 transition-transform duration-500" />
+              <img 
+                src="/leadership_portrait_1772813739989.png" 
+                alt="Nonhlanhla Abegail Mokoroane" 
+                className="relative rounded-[2.5rem] shadow-2xl w-full aspect-[4/5] object-cover"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection direction="left" className="w-full md:w-3/5">
+            <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wider uppercase mb-6">
+              Our Visionary
+            </span>
+            <h2 className="text-4xl md:text-5xl font-heading font-black mb-4 leading-tight">
+              Nonhlanhla Abegail Mokoroane
+            </h2>
+            <p className="text-xl text-secondary font-bold mb-8">Visionary and Operations Director</p>
+            <div className="relative mb-10">
+              <Quote className="absolute -left-8 -top-8 w-16 h-16 text-primary/10 -z-10" />
+              <p className="text-xl italic text-muted-foreground leading-relaxed">
+                "Widowed at 34, she raised two children alone and found healing and purpose through faith and community. Her journey inspired the creation of Women in Resilience."
+              </p>
+            </div>
+            <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 rounded-xl px-8 py-6 font-bold">
+              <Link to="/leadership">Meet the Leadership Team</Link>
+            </Button>
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
+
+    {/* Partner CTA */}
+    <section className="relative py-32 overflow-hidden mx-4 md:mx-8 lg:mx-16 my-16 rounded-[3rem]">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary" />
+      <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
       <div className="relative container mx-auto px-4 text-center">
         <AnimatedSection>
-          <Heart className="w-10 h-10 text-secondary mx-auto mb-4" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
-            Join Us in Making a Difference
+          <Heart className="w-16 h-16 text-secondary mx-auto mb-8 animate-pulse" />
+          <h2 className="text-4xl md:text-6xl font-heading font-black text-white mb-8 max-w-4xl mx-auto leading-tight">
+            Partner With Us to Uplift Women & Create Lasting Hope
           </h2>
-          <p className="text-primary-foreground/80 max-w-xl mx-auto mb-8 text-lg">
-            Your support transforms lives. Partner with us to empower more women toward resilience and independence.
+          <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-12 font-medium">
+            Your support transforms lives. Partner with Women in Resilience to strengthen communities and reflect God's love.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 px-10 py-8 rounded-2xl font-black text-xl shadow-2xl hover:-translate-y-1 transition-all">
               <Link to="/partner">Become a Partner</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8">
-              <Link to="/contact">Get in Touch</Link>
+            <Button asChild size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 px-10 py-8 rounded-2xl font-black text-xl backdrop-blur-sm">
+              <Link to="/contact">Support Our Mission</Link>
             </Button>
           </div>
         </AnimatedSection>
