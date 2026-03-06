@@ -4,6 +4,20 @@ import { Card, CardContent } from "@/components/ui/card";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Heart, Users, Globe, Handshake, BookOpen, Shield, Sparkles, ArrowRight, Quote } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
+import { cn } from "@/lib/utils";
+
+const heroImages = [
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.24.jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.24(1).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.24(2).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.24(3).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.25.jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.25(1).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.25(2).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.26.jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.26(1).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.26(2).jpeg",
+];
 
 const Counter = ({ end, label, suffix = "" }: { end: number; label: string; suffix?: string }) => {
   const [count, setCount] = useState(0);
@@ -43,19 +57,35 @@ const programs = [
   { icon: Shield, title: "Faith & Counseling", desc: "Spiritual guidance and professional counseling to rebuild hope and resilience." },
 ];
 
-const Index = () => (
-  <div className="min-h-screen">
-    {/* Hero */}
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img 
-          src="/hero_women_support_1772813700782.png" 
-          alt="Women supporting each other" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-background/90 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-black/20" />
-      </div>
+const Index = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          {heroImages.map((src, index) => (
+            <img
+              key={src}
+              src={src}
+              alt="Women in Resilience Gallery"
+              className={cn(
+                "absolute inset-0 w-full h-full object-cover transition-opacity duration-1000",
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              )}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-background/90 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
       
       <div className="relative container mx-auto px-4 text-center max-w-5xl">
         <AnimatedSection>
@@ -296,6 +326,7 @@ const Index = () => (
       </div>
     </section>
   </div>
-);
+  );
+};
 
 export default Index;
