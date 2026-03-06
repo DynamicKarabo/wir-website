@@ -93,16 +93,66 @@ const Index = () => (
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
 
-    {/* Mission */}
-    <section className="section-padding">
-      <div className="container mx-auto max-w-3xl text-center">
-        <AnimatedSection>
-          <Sparkles className="w-8 h-8 text-secondary mx-auto mb-4" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Our Mission</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Women in Resilience exists to empower widowed and vulnerable women by providing holistic support through faith-based programs, skills training, and community building — restoring dignity and creating pathways to self-sufficiency.
-          </p>
-        </AnimatedSection>
+    {/* About Short */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          <AnimatedSection direction="right">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-secondary/20 rounded-[2.5rem] -rotate-2" />
+              <img 
+                src="/community_gathering_1772813722593.png" 
+                alt="Community gathering" 
+                className="relative rounded-[2rem] shadow-2xl w-full h-[500px] object-cover"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection direction="left">
+            <h2 className="text-4xl md:text-5xl font-heading font-black mb-8 leading-tight">
+              About Women in Resilience
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+              Women in Resilience (WIR) is a nonprofit organization dedicated to empowering women to overcome life’s hardships through faith, support, and community connection. Through workshops, mentorship, and outreach programs, WIR helps women rediscover strength, purpose, and hope.
+            </p>
+            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10 rounded-xl px-8 py-6 font-bold">
+              <Link to="/about">Read Our Full Story</Link>
+            </Button>
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
+
+    {/* Mission & Vision */}
+    <section className="section-padding bg-hope-bg/50">
+      <div className="container mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <AnimatedSection delay={100}>
+            <Card className="h-full border-none shadow-xl bg-white rounded-[2rem] overflow-hidden group hover:shadow-2xl transition-all duration-500">
+              <CardContent className="p-10">
+                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-heading font-black mb-6">Our Mission</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                  To create a supportive community where women find comfort, guidance, and strength in their faith while rebuilding their lives with renewed purpose.
+                </p>
+              </CardContent>
+            </Card>
+          </AnimatedSection>
+          <AnimatedSection delay={200}>
+            <Card className="h-full border-none shadow-xl bg-white rounded-[2rem] overflow-hidden group hover:shadow-2xl transition-all duration-500">
+              <CardContent className="p-10">
+                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-8 shadow-lg shadow-secondary/20 group-hover:scale-110 transition-transform duration-300">
+                  <Sparkles className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-heading font-black mb-6">Our Vision</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                  Empowering women to rise above adversity and reflect God's love and hope.
+                </p>
+              </CardContent>
+            </Card>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
 
