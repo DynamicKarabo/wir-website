@@ -37,7 +37,7 @@ const About = () => (
             <div className="relative group">
               <div className="absolute -inset-4 bg-primary/10 rounded-[3rem] rotate-3 group-hover:rotate-6 transition-transform duration-500" />
               <img 
-                src="https://images.unsplash.com/photo-1531123897727-8f129e1bfd8c?q=80&w=800&auto=format&fit=crop" 
+                src="/gallery/WhatsApp Image 2026-03-05 at 17.56.28(5).jpeg" 
                 alt="Women supporting each other" 
                 className="relative rounded-[2.5rem] shadow-2xl w-full aspect-[4/5] object-cover"
               />
@@ -118,9 +118,9 @@ const About = () => (
         <AnimatedSection>
           <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
             <img 
-              src="https://images.unsplash.com/photo-1531123414708-f52f3869a8b1?q=80&w=1200&auto=format&fit=crop" 
+              src="/gallery/WhatsApp Image 2026-03-05 at 17.56.27(3).jpeg" 
               alt="Confident smiling woman" 
-              className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105"
+              className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105 object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center">
               <div className="p-8 md:p-16 max-w-2xl">

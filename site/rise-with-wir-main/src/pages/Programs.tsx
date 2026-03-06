@@ -77,7 +77,7 @@ const Programs = () => (
             <div className="relative">
               <div className="absolute -inset-4 bg-secondary/10 rounded-[3rem] -rotate-2" />
               <img 
-                src="/programs_women_gathering_1772813913345.png" 
+                src="/gallery/WhatsApp Image 2026-03-05 at 17.56.31.jpeg" 
                 alt="Women gathering in community" 
                 className="relative rounded-[2.5rem] shadow-2xl w-full h-[600px] object-cover"
               />
@@ -87,8 +87,11 @@ const Programs = () => (
             <h2 className="text-4xl md:text-6xl font-heading font-black mb-8 leading-tight">
               A Safe Space to <span className="text-primary">Grow Together</span>
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-10">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-6">
               Our programs are more than just services; they are invitations to join a sisterhood. Whether you're seeking emotional healing, spiritual growth, or practical mentorship, you'll find a community ready to welcome you with open arms.
+            </p>
+            <p className="text-base text-muted-foreground leading-relaxed mb-10">
+              We structure our initiatives carefully to meet women at their immediate point of need while paving a clear path toward long-term resilience. Every workshop, support ring, and resource packet is infused with the profound belief that restoration is possible for everyone.
             </p>
             <div className="space-y-6 mb-12">
               {[

@@ -131,7 +131,7 @@ const Index = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-secondary/20 rounded-[2.5rem] -rotate-2" />
               <img 
-                src="/community_gathering_1772813722593.png" 
+                src="/gallery/WhatsApp Image 2026-03-05 at 17.56.29.jpeg" 
                 alt="Community gathering" 
                 className="relative rounded-[2rem] shadow-2xl w-full h-[500px] object-cover"
               />
@@ -141,8 +141,11 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-heading font-black mb-8 leading-tight">
               About Women in Resilience
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              Women in Resilience (WIR) is a nonprofit organization dedicated to empowering women to overcome life’s hardships through faith, support, and community connection. Through workshops, mentorship, and outreach programs, WIR helps women rediscover strength, purpose, and hope.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 font-medium">
+              Women in Resilience (WIR) is a nonprofit organization dedicated to empowering women to overcome life’s hardships through faith, support, and community connection. 
+            </p>
+            <p className="text-base text-muted-foreground leading-relaxed mb-8">
+              We understand that the journey through loss, grief, or extreme adversity is rarely linear. Through tailored workshops, intimate mentorship, and active outreach programs, WIR ensures no woman has to walk alone. We provide physical, emotional, and spiritual tools so every woman can rediscover her strength, realize her divine purpose, and spread hope within her family and community.
             </p>
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10 rounded-xl px-8 py-6 font-bold">
               <Link to="/about">Read Our Full Story</Link>
