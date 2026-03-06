@@ -273,7 +273,7 @@ const Index = () => {
             <div className="relative group">
               <div className="absolute -inset-4 bg-primary/10 rounded-[3rem] rotate-3 group-hover:rotate-6 transition-transform duration-500" />
               <img 
-                src="/leadership_portrait_1772813739989.png" 
+                src="/nonhlanhla.jpg" 
                 alt="Nonhlanhla Abegail Mokoroane" 
                 className="relative rounded-[2.5rem] shadow-2xl w-full aspect-[4/5] object-cover"
               />
