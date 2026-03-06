@@ -29,8 +29,7 @@ const AnimatedSection = ({
       transition: { 
         duration, 
         delay: delay / 1000, 
-        ease: [0.21, 0.45, 0.32, 0.9] 
-      },
+        ease: [0.21, 0.45, 0.32, 0.9] as const      },
     },
   };
 
