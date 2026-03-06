@@ -169,57 +169,69 @@ const Index = () => (
     </section>
 
     {/* Programs Preview */}
-    <section className="section-padding">
+    <section className="section-padding bg-background relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-[10rem] -z-10" />
       <div className="container mx-auto">
         <AnimatedSection>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3">What We Do</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Our programs are designed to meet women where they are and walk with them toward a brighter future.</p>
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-heading font-black mb-6">Our Programs</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Our programs are designed to meet women where they are and walk with them toward a brighter future, restoring dignity and hope.</p>
           </div>
         </AnimatedSection>
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {programs.map((p, i) => (
-            <AnimatedSection key={p.title} delay={i * 150}>
-              <Card className="h-full hover:shadow-lg transition-shadow border-none bg-card group">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
-                    <p.icon className="w-8 h-8 text-primary" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {[
+            { icon: Sparkles, title: "Resilience Workshops", desc: "Interactive sessions offering emotional, spiritual, and practical tools for overcoming adversity." },
+            { icon: Users, title: "Support Groups", desc: "Safe environments where women share experiences and uplift one another in faith." },
+            { icon: BookOpen, title: "Empowerment Resources", desc: "Guides, devotionals, and materials that support women on their healing journey." },
+            { icon: Handshake, title: "Outreach Initiatives", desc: "Partnerships and events providing mentorship and practical community support." },
+          ].map((p, i) => (
+            <AnimatedSection key={p.title} delay={i * 100}>
+              <Card className="h-full border-none shadow-lg hover:shadow-2xl transition-all duration-500 bg-white rounded-[2rem] group overflow-hidden">
+                <CardContent className="p-8 text-center flex flex-col h-full">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                    <p.icon className="w-8 h-8 text-secondary group-hover:text-white" />
                   </div>
-                  <h3 className="text-xl font-heading font-semibold mb-3">{p.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+                  <h3 className="text-xl font-heading font-black mb-4 group-hover:text-primary transition-colors">{p.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">{p.desc}</p>
                 </CardContent>
               </Card>
             </AnimatedSection>
           ))}
         </div>
         <AnimatedSection>
-          <div className="text-center mt-10">
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10">
-              <Link to="/programs">View All Programs <ArrowRight className="w-4 h-4 ml-1" /></Link>
+          <div className="text-center mt-16">
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-10 py-7 text-lg font-bold shadow-xl">
+              <Link to="/programs">Explore All Programs <ArrowRight className="w-6 h-6 ml-2" /></Link>
             </Button>
           </div>
         </AnimatedSection>
       </div>
     </section>
 
-    {/* Testimonial */}
-    <section className="section-padding bg-warm">
-      <div className="container mx-auto max-w-4xl">
-        <AnimatedSection>
-          <div className="bg-card rounded-2xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center gap-8">
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center shrink-0">
-              <Users className="w-12 h-12 text-primary" />
+    {/* Impact Numbers */}
+    <section className="py-24 bg-foreground text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+          <AnimatedSection delay={100} direction="none">
+            <div className="text-center">
+              <div className="text-6xl md:text-7xl font-heading font-black text-secondary mb-4">5000+</div>
+              <div className="text-xl text-white/80 font-medium max-w-[200px] mx-auto leading-tight">Women we aim to reach through our programs</div>
             </div>
-            <div>
-              <Quote className="w-8 h-8 text-secondary mb-3" />
-              <p className="text-lg md:text-xl italic text-foreground/80 leading-relaxed mb-4">
-                "Through WIR, I found not just support, but a family. They helped me learn new skills, rebuild my confidence, and discover that my story isn't over — it's just beginning."
-              </p>
-              <p className="font-heading font-semibold">Grace Muthoni</p>
-              <p className="text-sm text-muted-foreground">Program Graduate, Nairobi</p>
+          </AnimatedSection>
+          <AnimatedSection delay={200} direction="none">
+            <div className="text-center">
+              <div className="text-6xl md:text-7xl font-heading font-black text-secondary mb-4">85%</div>
+              <div className="text-xl text-white/80 font-medium max-w-[200px] mx-auto leading-tight">Target confidence improvement among participants</div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+          <AnimatedSection delay={300} direction="none">
+            <div className="text-center">
+              <div className="text-6xl md:text-7xl font-heading font-black text-secondary mb-4">Faith</div>
+              <div className="text-xl text-white/80 font-medium max-w-[200px] mx-auto leading-tight">Centered support network community driven</div>
+            </div>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
 
