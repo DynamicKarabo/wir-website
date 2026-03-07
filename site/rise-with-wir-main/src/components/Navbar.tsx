@@ -43,8 +43,8 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         <Link to="/" className="group relative w-32 sm:w-40 md:w-56 lg:w-[300px] h-10 flex shrink-0">
           <img 
-            src={scrolled ? "/newlogo.png" : "/navbar_logo.png"}
-            key={scrolled ? "colored" : "white"}
+            src="/logo.png"
+            key="colored"
             alt="Women in Resilience Logo" 
             className="absolute -top-3 lg:-top-5 left-0 h-20 sm:h-24 md:h-32 lg:h-48 w-auto object-contain transition-all duration-500 drop-shadow-sm group-hover:scale-105 origin-top-left"
           />

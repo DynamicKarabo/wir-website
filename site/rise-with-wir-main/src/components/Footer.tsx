@@ -11,7 +11,7 @@ const Footer = () => (
         <div>
           <div className="flex items-center gap-2 mb-4">
             <img 
-              src="/newlogo.png" 
+              src="/logo.png" 
               alt="Women in Resilience Logo" 
               className="h-16 w-auto object-contain"
             />
