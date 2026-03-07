@@ -40,6 +40,7 @@ const Footer = () => (
               { to: "/about", label: "About Us" },
               { to: "/programs", label: "Our Programs" },
               { to: "/leadership", label: "Leadership" },
+              { to: "/gallery", label: "Gallery" },
               { to: "/partner", label: "Partner With Us" },
               { to: "/contact", label: "Contact" },
               { to: "/profile.pdf", label: "Company Profile", external: true },
