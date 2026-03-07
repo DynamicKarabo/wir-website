@@ -46,7 +46,7 @@ const Navbar = () => {
           scrolled ? "w-32 h-10" : "w-32 sm:w-48 md:w-64 lg:w-[400px] h-10"
         )}>
           <img 
-            src="/tslogo.png"
+            src="/compress.png"
             key="colored"
             alt="Women in Resilience Logo" 
             className={cn(
