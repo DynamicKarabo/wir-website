@@ -10,10 +10,11 @@ const Footer = () => (
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-lg">W</span>
-            </div>
-            <span className="font-heading font-bold text-xl">Women in Resilience</span>
+            <img 
+              src="/newlogo.png" 
+              alt="Women in Resilience Logo" 
+              className="h-16 w-auto object-contain"
+            />
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
             Empowering Women. Strengthening Faith. Building Resilience.
