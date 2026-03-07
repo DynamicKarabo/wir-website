@@ -51,7 +51,7 @@ const Navbar = () => {
             alt="Women in Resilience Logo" 
             className={cn(
                "absolute left-0 w-auto object-contain transition-all duration-500 drop-shadow-sm origin-top-left group-hover:scale-105",
-               scrolled ? "-top-1 h-14" : "-top-2 h-32 sm:h-40 md:h-52 lg:h-64"
+               scrolled ? "-top-1 h-14" : "-top-2 h-28 sm:h-40 md:h-52 lg:h-64"
             )}
           />
         </Link>
