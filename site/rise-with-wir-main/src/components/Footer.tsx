@@ -13,7 +13,7 @@ const Footer = () => (
             <img 
               src="/logo.png" 
               alt="Women in Resilience Logo" 
-              className="h-24 sm:h-28 md:h-32 w-auto object-contain"
+              className="h-32 sm:h-40 md:h-48 lg:h-56 w-auto object-contain"
             />
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
