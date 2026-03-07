@@ -43,9 +43,9 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         <Link to="/" className="group relative w-32 sm:w-40 md:w-56 lg:w-[300px] h-10 flex shrink-0">
           <img 
-            src="/logo.svg" 
+            src="/newlogo.png" 
             alt="Women in Resilience Logo" 
-            className="absolute -top-4 lg:-top-6 left-0 h-24 sm:h-32 md:h-48 lg:h-64 w-auto object-contain transition-all duration-500 drop-shadow-sm group-hover:scale-105 origin-top-left"
+            className="absolute -top-3 lg:-top-5 left-0 h-20 sm:h-24 md:h-32 lg:h-48 w-auto object-contain transition-all duration-500 drop-shadow-sm group-hover:scale-105 origin-top-left"
           />
         </Link>
 
