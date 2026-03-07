@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         <Link to="/" className={cn(
           "group relative flex shrink-0 transition-all duration-500",
-          scrolled ? "w-32 h-10" : "w-32 sm:w-48 md:w-64 lg:w-[400px] h-10"
+          scrolled ? "w-32 h-10" : "w-32 sm:w-48 md:w-56 lg:w-64 h-10"
         )}>
           <img 
             src="/compress.png"
@@ -52,7 +52,7 @@ const Navbar = () => {
             className={cn(
                "absolute left-0 w-auto object-contain transition-all duration-500 drop-shadow-sm origin-top-left group-hover:scale-105",
                "filter drop-shadow-[0.5px_0_0_rgba(255,255,255,0.3)] drop-shadow-[-0.5px_0_0_rgba(255,255,255,0.3)] drop-shadow-[0_0.5px_0_rgba(255,255,255,0.3)] drop-shadow-[0_-0.5px_0_rgba(255,255,255,0.3)]",
-               scrolled ? "-top-1 h-14" : "-top-2 h-28 sm:h-40 md:h-52 lg:h-64"
+               scrolled ? "-top-1 h-14" : "-top-2 h-28 sm:h-32 md:h-40 lg:h-48"
             )}
           />
         </Link>
