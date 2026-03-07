@@ -62,7 +62,7 @@ const Footer = () => (
           <ul className="space-y-3 text-sm text-primary-foreground/70">
             <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" /> 28A Caledon Drive, Norkem Park Ext 4, Kempton Park, Gauteng, 1618</li>
             <li className="flex items-center gap-2"><Phone className="w-4 h-4 shrink-0" /> 061 138 2660</li>
-            <li className="flex items-center gap-2"><Mail className="w-4 h-4 shrink-0" /> womeninresilience@gmail.com</li>
+            <li className="flex items-center gap-2"><Mail className="w-4 h-4 shrink-0" /> info@womeninresilience.co.za</li>
           </ul>
         </div>
 
