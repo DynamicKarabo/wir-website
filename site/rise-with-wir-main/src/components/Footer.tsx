@@ -13,7 +13,7 @@ const Footer = () => (
             <img 
               src="/compress.png"
               alt="Women in Resilience Logo" 
-              className="h-32 sm:h-40 md:h-48 lg:h-56 w-auto object-contain filter drop-shadow-[0.5px_0_0_rgba(255,255,255,0.2)] drop-shadow-[-0.5px_0_0_rgba(255,255,255,0.2)] drop-shadow-[0_0.5px_0_rgba(255,255,255,0.2)] drop-shadow-[0_-0.5px_0_rgba(255,255,255,0.2)]"
+              className="h-40 sm:h-48 md:h-56 lg:h-64 w-auto object-contain filter drop-shadow-[0.5px_0_0_rgba(255,255,255,0.2)] drop-shadow-[-0.5px_0_0_rgba(255,255,255,0.2)] drop-shadow-[0_0.5px_0_rgba(255,255,255,0.2)] drop-shadow-[0_-0.5px_0_rgba(255,255,255,0.2)]"
             />
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
