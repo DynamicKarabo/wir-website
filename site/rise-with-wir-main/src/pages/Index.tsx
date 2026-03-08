@@ -6,6 +6,19 @@ import { Heart, Users, Globe, Handshake, BookOpen, Shield, Sparkles, ArrowRight,
 import { useEffect, useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 
+const heroImages = [
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.24.jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.24(1).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.24(2).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.24(3).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.25.jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.25(1).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.25(2).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.26.jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.26(1).jpeg",
+  "/gallery/WhatsApp Image 2026-03-05 at 17.56.26(2).jpeg",
+];
+
 const Counter = ({ end, label, suffix = "" }: { end: number; label: string; suffix?: string }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -45,45 +58,70 @@ const programs = [
 ];
 
 const Index = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-40 md:pt-48 bg-white">
-        <div className="relative container mx-auto px-4 text-center max-w-5xl">
-          <AnimatedSection>
-            <span className="inline-block px-6 py-2 rounded-2xl bg-secondary/10 text-secondary text-sm font-bold tracking-widest uppercase mb-8 border border-secondary/20">
-              Faith · Resilience · Community
-            </span>
-          </AnimatedSection>
-          <AnimatedSection delay={100}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black text-primary leading-[1.1] mb-8">
-              Together in Grief.<br />
-              <span className="text-secondary">Together in Strength.</span>
-            </h1>
-          </AnimatedSection>
-          <AnimatedSection delay={200}>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed font-medium">
-              Women in Resilience empowers widows and vulnerable women to rebuild their lives through faith, community, and resilience.
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={300}>
-            <p className="text-lg md:text-xl text-secondary italic font-serif mb-12">
-              “A bruised reed he will not break.” – Matthew 12:20
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={400}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-10 py-7 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
-                <Link to="/contact">Join Our Community</Link>
-              </Button>
-              <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 text-lg px-10 py-7 rounded-2xl font-bold transition-all hover:-translate-y-1 shadow-xl hover:shadow-2xl">
-                <Link to="/partner">Partner With Us <Handshake className="w-6 h-6 ml-2" /></Link>
-              </Button>
-            </div>
-          </AnimatedSection>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-48 md:pt-56">
+        <div className="absolute inset-0">
+          {heroImages.map((src, index) => (
+            <img
+              key={src}
+              src={src}
+              alt="Women in Resilience Gallery"
+              className={cn(
+                "absolute inset-0 w-full h-full object-cover transition-opacity duration-1000",
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              )}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-background/90 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
-      </section>
+      
+      <div className="relative container mx-auto px-4 text-center max-w-5xl">
+        <AnimatedSection>
+          <span className="inline-block px-6 py-2 rounded-2xl bg-secondary/20 text-secondary text-sm font-bold tracking-widest uppercase mb-8 backdrop-blur-sm border border-secondary/30">
+            Faith · Resilience · Community
+          </span>
+        </AnimatedSection>
+        <AnimatedSection delay={100}>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[1.1] mb-8 drop-shadow-sm">
+            Together in Grief.<br />
+            <span className="text-secondary">Together in Strength.</span>
+          </h1>
+        </AnimatedSection>
+        <AnimatedSection delay={200}>
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6 leading-relaxed font-medium">
+            Women in Resilience empowers widows and vulnerable women to rebuild their lives through faith, community, and resilience.
+          </p>
+        </AnimatedSection>
+        <AnimatedSection delay={300}>
+          <p className="text-lg md:text-xl text-secondary italic font-serif mb-12 drop-shadow-sm">
+            “A bruised reed he will not break.” – Matthew 12:20
+          </p>
+        </AnimatedSection>
+        <AnimatedSection delay={400}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-10 py-7 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+              <Link to="/contact">Join Our Community</Link>
+            </Button>
+            <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 text-lg px-10 py-7 rounded-2xl font-bold transition-all hover:-translate-y-1 shadow-xl hover:shadow-2xl">
+              <Link to="/partner">Partner With Us <Handshake className="w-6 h-6 ml-2" /></Link>
+            </Button>
+          </div>
+        </AnimatedSection>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+    </section>
 
     {/* About Short */}
     <section className="section-padding bg-background">

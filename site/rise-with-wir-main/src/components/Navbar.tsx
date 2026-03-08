@@ -31,17 +31,13 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  const isHomePage = location.pathname === "/";
-
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-background/80 backdrop-blur-xl shadow-lg border-b border-border/50 py-2"
-          : isHomePage
-            ? "bg-white/50 backdrop-blur-sm py-4"
-            : "bg-gradient-to-b from-black/60 to-transparent py-4"
+          : "bg-gradient-to-b from-black/60 to-transparent py-4"
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
@@ -55,6 +51,7 @@ const Navbar = () => {
             alt="Women in Resilience Logo" 
             className={cn(
                "absolute left-0 w-auto object-contain transition-all duration-500 drop-shadow-md origin-top-left",
+               !scrolled && "filter drop-shadow-[0.5px_0_0_rgba(255,255,255,0.3)] drop-shadow-[-0.5px_0_0_rgba(255,255,255,0.3)] drop-shadow-[0_0.5px_0_rgba(255,255,255,0.3)] drop-shadow-[0_-0.5px_0_rgba(255,255,255,0.3)]",
                scrolled ? "top-0 h-12" : "-top-4 h-40 sm:h-48 md:h-64 lg:h-72"
             )}
           />
@@ -85,8 +82,8 @@ const Navbar = () => {
                 className={cn(
                   "px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300",
                   location.pathname === l.to
-                    ? (scrolled || isHomePage ? "text-primary bg-primary/5" : "text-white bg-white/20")
-                    : (scrolled || isHomePage)
+                    ? (scrolled ? "text-primary bg-primary/5" : "text-white bg-white/20")
+                    : scrolled 
                       ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
                       : "text-white/80 hover:text-white hover:bg-white/10"
                 )}
@@ -105,7 +102,7 @@ const Navbar = () => {
           onClick={() => setOpen(!open)}
           className={cn(
             "lg:hidden p-2 rounded-xl transition-colors",
-            (scrolled || isHomePage) ? "text-foreground hover:bg-accent" : "text-white hover:bg-white/10"
+            scrolled ? "text-foreground hover:bg-accent" : "text-white hover:bg-white/10"
           )}
           aria-label="Toggle menu"
         >
