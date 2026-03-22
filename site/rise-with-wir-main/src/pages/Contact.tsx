@@ -5,15 +5,35 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Send, MessageSquare } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const submitRate = useRef({ windowStart: 0, count: 0 });
+
+  const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
+  const RATE_LIMIT_MAX = 3;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const now = Date.now();
+    if (now - submitRate.current.windowStart > RATE_LIMIT_WINDOW_MS) {
+      submitRate.current.windowStart = now;
+      submitRate.current.count = 0;
+    }
+
+    if (submitRate.current.count >= RATE_LIMIT_MAX) {
+      toast({
+        title: "Too many requests",
+        description: "Please wait a bit before sending another message.",
+      });
+      return;
+    }
+
+    submitRate.current.count += 1;
     setIsSubmitting(true);
     // Simulate form submission
     setTimeout(() => {

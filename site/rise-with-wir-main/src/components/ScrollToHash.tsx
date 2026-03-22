@@ -6,11 +6,21 @@ const ScrollToHash = () => {
 
   useEffect(() => {
     if (location.hash) {
-      const id = decodeURIComponent(location.hash.replace("#", ""));
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-        return;
+      const rawHash = location.hash.replace("#", "");
+      let decodedHash: string | null = null;
+
+      try {
+        decodedHash = decodeURIComponent(rawHash);
+      } catch {
+        decodedHash = null;
+      }
+
+      if (decodedHash && /^[A-Za-z][A-Za-z0-9_\-:.]*$/.test(decodedHash)) {
+        const el = document.getElementById(decodedHash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
       }
     }
 

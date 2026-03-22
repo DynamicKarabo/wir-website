@@ -65,25 +65,70 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null;
   }
 
-  return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
-    return color ? `  --color-${key}: ${color};` : null;
-  })
-  .join("\n")}
+  const sanitizeCssColor = (value: string) => {
+    const trimmed = value.trim();
+
+    if (trimmed === "transparent" || trimmed === "currentColor") {
+      return trimmed;
+    }
+
+    if (/^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/.test(trimmed)) {
+      return trimmed;
+    }
+
+    if (/^rgba?\(\s*\d{1,3}(\s*,\s*\d{1,3}){2}(\s*,\s*(0|1|0?\.\d+))?\s*\)$/.test(trimmed)) {
+      return trimmed;
+    }
+
+    if (/^hsla?\(\s*\d{1,3}(\s*,\s*\d{1,3}%){2}(\s*,\s*(0|1|0?\.\d+))?\s*\)$/.test(trimmed)) {
+      return trimmed;
+    }
+
+    if (/^var\(--[A-Za-z0-9_-]+\)$/.test(trimmed)) {
+      return trimmed;
+    }
+
+    return null;
+  };
+
+  const escapeCssValue = (value: string) => {
+    if (typeof CSS !== "undefined" && typeof CSS.escape === "function") {
+      return CSS.escape(value);
+    }
+    return value.replace(/[^A-Za-z0-9_-]/g, "\\$&");
+  };
+
+  const cssText = Object.entries(THEMES)
+    .map(([theme, prefix]) => {
+      const rules = colorConfig
+        .map(([key, itemConfig]) => {
+          const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
+          const safeColor = color ? sanitizeCssColor(color) : null;
+          const safeKey = key.replace(/[^A-Za-z0-9_-]/g, "-");
+          return safeColor ? `  --color-${safeKey}: ${safeColor};` : null;
+        })
+        .filter(Boolean)
+        .join("\n");
+
+      if (!rules) {
+        return null;
+      }
+
+      return `
+${prefix} [data-chart="${escapeCssValue(id)}"] {
+${rules}
 }
-`,
-          )
-          .join("\n"),
-      }}
-    />
+`;
+    })
+    .filter(Boolean)
+    .join("\n");
+
+  if (!cssText) {
+    return null;
+  }
+
+  return (
+    <style>{cssText}</style>
   );
 };
 
