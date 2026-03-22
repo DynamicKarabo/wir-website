@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const Footer = () => (
-  <footer className="bg-foreground text-primary-foreground">
+  <footer id="contact" className="bg-foreground text-primary-foreground">
     <div className="container mx-auto px-4 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand */}
@@ -37,12 +37,12 @@ const Footer = () => (
           <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/70">
             {[
-              { to: "/about", label: "About Us" },
-              { to: "/programs", label: "Our Programs" },
-              { to: "/leadership", label: "Leadership" },
+              { to: "/#about", label: "About Us" },
+              { to: "/#programs", label: "Our Programs" },
+              { to: "/#leadership", label: "Leadership" },
               { to: "/gallery", label: "Gallery" },
-              { to: "/partner", label: "Partner With Us" },
-              { to: "/contact", label: "Contact" },
+              { to: "/#partner", label: "Partner With Us" },
+              { to: "/#contact", label: "Contact" },
               { to: "/profile.pdf", label: "Company Profile", external: true },
             ].map((l) => (
               <li key={l.to}>

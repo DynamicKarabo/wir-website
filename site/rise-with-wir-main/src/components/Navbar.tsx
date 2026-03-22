@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/programs", label: "Programs" },
-  { to: "/leadership", label: "Leadership" },
+  { to: "/#home", label: "Home" },
+  { to: "/#about", label: "About" },
+  { to: "/#programs", label: "Programs" },
+  { to: "/#leadership", label: "Leadership" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/partner", label: "Partner With Us" },
-  { to: "/contact", label: "Contact" },
+  { to: "/#partner", label: "Partner With Us" },
+  { to: "/#contact", label: "Contact" },
   { to: "/profile.pdf", label: "Company Profile", external: true },
 ];
 
@@ -19,6 +19,12 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isActive = (to: string) => {
+    if (to.startsWith("/#")) {
+      return location.pathname === "/" && location.hash === to.replace("/", "");
+    }
+    return location.pathname === to;
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,7 +34,6 @@ const Navbar = () => {
 
   useEffect(() => {
     setOpen(false);
-    window.scrollTo(0, 0);
   }, [location]);
 
   return (
@@ -81,7 +86,7 @@ const Navbar = () => {
                 to={l.to}
                 className={cn(
                   "px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300",
-                  location.pathname === l.to
+                  isActive(l.to)
                     ? (scrolled ? "text-primary bg-primary/5" : "text-white bg-white/20")
                     : scrolled 
                       ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
@@ -131,7 +136,7 @@ const Navbar = () => {
                   to={l.to}
                   className={cn(
                     "px-4 py-3 rounded-2xl text-base font-semibold transition-colors",
-                    location.pathname === l.to
+                    isActive(l.to)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-accent"
                   )}

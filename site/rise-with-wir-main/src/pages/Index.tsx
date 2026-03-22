@@ -70,7 +70,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-48 md:pt-56">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-48 md:pt-56">
         <div className="absolute inset-0">
           {heroImages.map((src, index) => (
             <img
@@ -124,7 +124,7 @@ const Index = () => {
     </section>
 
     {/* About Short */}
-    <section className="section-padding bg-background">
+    <section id="about" className="section-padding bg-background">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           <AnimatedSection direction="right">
@@ -156,7 +156,7 @@ const Index = () => {
     </section>
 
     {/* Mission & Vision */}
-    <section className="section-padding bg-hope-bg/50">
+    <section id="mission-vision" className="section-padding bg-hope-bg/50">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <AnimatedSection delay={100}>
@@ -190,7 +190,7 @@ const Index = () => {
     </section>
 
     {/* Impact Numbers */}
-    <section className="py-16 bg-muted">
+    <section id="impact" className="py-16 bg-muted">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <Counter end={2500} label="Women Served" suffix="+" />
@@ -202,7 +202,7 @@ const Index = () => {
     </section>
 
     {/* Programs Preview */}
-    <section className="section-padding bg-background relative overflow-hidden">
+    <section id="programs" className="section-padding bg-background relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-[10rem] -z-10" />
       <div className="container mx-auto">
         <AnimatedSection>
@@ -242,7 +242,7 @@ const Index = () => {
     </section>
 
     {/* Impact Numbers */}
-    <section className="py-24 bg-foreground text-white relative overflow-hidden">
+    <section id="impact-highlights" className="py-24 bg-foreground text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
@@ -269,7 +269,7 @@ const Index = () => {
     </section>
 
     {/* Leadership Highlight */}
-    <section className="section-padding bg-hope-bg/30">
+    <section id="leadership" className="section-padding bg-hope-bg/30">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20 max-w-6xl mx-auto">
           <AnimatedSection direction="right" className="w-full md:w-2/5">
@@ -305,7 +305,7 @@ const Index = () => {
     </section>
 
     {/* Partner CTA */}
-    <section className="relative py-32 overflow-hidden mx-4 md:mx-8 lg:mx-16 my-16 rounded-[3rem]">
+    <section id="partner" className="relative py-32 overflow-hidden mx-4 md:mx-8 lg:mx-16 my-16 rounded-[3rem]">
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary" />
       <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
       <div className="relative container mx-auto px-4 text-center">

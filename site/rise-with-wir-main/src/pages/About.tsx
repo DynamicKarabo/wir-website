@@ -6,18 +6,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const values = [
-  { icon: Shield, title: "Resilience", desc: "Empowering women to overcome challenges with strength." },
-  { icon: Heart, title: "Faith", desc: "Trusting in spiritual guidance and hope." },
-  { icon: Users, title: "Support", desc: "Creating safe spaces where women uplift one another." },
-  { icon: Anchor, title: "Unity", desc: "Building strong communities of encouragement." },
-  { icon: Compass, title: "Courage", desc: "Helping women face adversity with confidence." },
+  { icon: Heart, title: "Gospel-Centered Restoration", desc: "We believe true healing begins with the finished work of Christ." },
+  { icon: Compass, title: "Lordship Alignment", desc: "We pursue lives submitted to the authority and leadership of Jesus Christ." },
+  { icon: Shield, title: "Biblical Integrity", desc: "All teaching, counsel, and structure must align with Scripture and the doctrine of the house." },
+  { icon: Users, title: "Dignity and Honour", desc: "Every woman is treated with value, respect, and confidentiality." },
+  { icon: Anchor, title: "Resilience Through Faith", desc: "We do not promote victim identity. We cultivate Kingdom identity." },
+  { icon: Sparkles, title: "Generational Impact", desc: "We believe healed women build healthy families and influence future generations." },
+  { icon: Shield, title: "Accountability and Covering", desc: "This ministry operates under the oversight and spiritual covering of Dominion Life Cathedral International." },
 ];
 
 const About = () => (
   <div className="min-h-screen">
     <PageHero 
       title="About Women in Resilience" 
-      subtitle="Faith · Resilience · Community connection." 
+      subtitle="Gospel-centered restoration under the Lordship of Christ." 
     />
 
     {/* Opening Section */}
@@ -25,12 +27,12 @@ const About = () => (
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           <AnimatedSection direction="right">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black mb-8 leading-tight">Guided by Faith, Driven by Purpose</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black mb-8 leading-tight">WOMEN IN RESILIENCE</h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-              Women in Resilience (WIR) is a faith-centered nonprofit organization dedicated to empowering women facing adversity. Founded on the belief that no woman should walk through hardship alone, we provide a sanctuary of hope, healing, and practical support.
+              Women in Resilience is a strategic outreach expression of Dominion Life Cathedral International, advancing the house vision of transformed communities, cities and nations by restoring grieving women through the Gospel of Jesus Christ and establishing them as resilient Kingdom pillars under His Lordship.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We understand the profound impact of loss, grief, and vulnerability. That is why our programs are designed not just to assist, but to deeply restore—encouraging women to rebuild their lives with dignity, spiritual strength, and the unyielding support of a sisterhood that truly cares.
+              We minister the Gospel, provide restoration, build supportive community, and empower grieving women towards renewed purpose.
             </p>
           </AnimatedSection>
           <AnimatedSection direction="left">
@@ -59,10 +61,10 @@ const About = () => (
               </div>
               <h3 className="text-3xl font-heading font-black mb-6">Our Mission</h3>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
-                To create a compassionate community where women receive support, spiritual encouragement, and practical resources to rebuild their lives.
+                To minister the Gospel, provide restoration, build supportive community, and empower grieving women towards renewed purpose.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
-                We actively walk alongside widows, single mothers, and vulnerable women. Through targeted community outreach, faith-based counseling, and skills development, we aim to bridge the gap between despair and sustainable independence.
+                We serve under the covering of Dominion Life Cathedral International, offering gospel-centered restoration that establishes women as resilient Kingdom pillars.
               </p>
             </div>
           </AnimatedSection>
@@ -74,14 +76,28 @@ const About = () => (
               </div>
               <h3 className="text-3xl font-heading font-black mb-6">Our Vision</h3>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
-                Empowering women to rise above adversity, rediscover strength through faith, and reflect hope within their communities.
+                Restored women living under the Lordship of Christ as resilient Kingdom pillars influencing families and communities.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
-                We envision a world where every woman, regardless of her past hardships, is equipped to lead a thriving, purpose-driven life. We strive to be a beacon of light, fostering generations of resilient women who inspire change.
+                We believe healed women build healthy families and influence future generations through Kingdom identity and biblical integrity.
               </p>
             </div>
           </AnimatedSection>
         </div>
+      </div>
+    </section>
+
+    {/* Positioning Statement */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto">
+        <AnimatedSection>
+          <div className="max-w-4xl mx-auto text-center bg-white shadow-xl rounded-[2.5rem] p-10 md:p-14">
+            <h2 className="text-3xl md:text-4xl font-heading font-black mb-6">Official Positioning Statement</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+              Women in Resilience is a strategic outreach expression of Dominion Life Cathedral International, advancing the house vision of transformed communities, cities and nations by restoring grieving women through the Gospel of Jesus Christ and establishing them as resilient Kingdom pillars under His Lordship.
+            </p>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
 
@@ -90,11 +106,11 @@ const About = () => (
       <div className="container mx-auto">
         <AnimatedSection>
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-heading font-black mb-6">Our Core Values</h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-black mb-6">Core Values for Women in Resilience</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">The principles that guide every interaction and program at Women in Resilience.</p>
           </div>
         </AnimatedSection>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {values.map((v, i) => (
             <AnimatedSection key={v.title} delay={i * 100}>
               <Card className="h-full text-center border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-[2rem] bg-white group overflow-hidden">
