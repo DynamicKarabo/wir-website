@@ -55,21 +55,6 @@ const About = () => (
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <AnimatedSection direction="right">
             <div className="bg-white p-12 rounded-[2.5rem] shadow-xl border-none h-full relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] transition-all group-hover:scale-110" />
-              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-lg shadow-primary/20">
-                <Heart className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-3xl font-heading font-black mb-6">Our Mission</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
-                To minister the Gospel, provide restoration, build supportive community, and empower grieving women towards renewed purpose.
-              </p>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                We serve under the covering of Dominion Life Cathedral International, offering gospel-centered restoration that establishes women as resilient Kingdom pillars.
-              </p>
-            </div>
-          </AnimatedSection>
-          <AnimatedSection direction="left" delay={200}>
-            <div className="bg-white p-12 rounded-[2.5rem] shadow-xl border-none h-full relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-[5rem] transition-all group-hover:scale-110" />
               <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-8 shadow-lg shadow-secondary/20">
                 <Sparkles className="w-8 h-8 text-white" />
@@ -80,6 +65,21 @@ const About = () => (
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
                 We believe healed women build healthy families and influence future generations through Kingdom identity and biblical integrity.
+              </p>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection direction="left" delay={200}>
+            <div className="bg-white p-12 rounded-[2.5rem] shadow-xl border-none h-full relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] transition-all group-hover:scale-110" />
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-lg shadow-primary/20">
+                <Heart className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-heading font-black mb-6">Our Mission</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                To minister the Gospel, provide restoration, build supportive community, and empower grieving women towards renewed purpose.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                We serve under the covering of Dominion Life Cathedral International, offering gospel-centered restoration that establishes women as resilient Kingdom pillars.
               </p>
             </div>
           </AnimatedSection>

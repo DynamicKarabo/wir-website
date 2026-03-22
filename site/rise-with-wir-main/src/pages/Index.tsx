@@ -162,12 +162,12 @@ const Index = () => {
           <AnimatedSection delay={100}>
             <Card className="h-full border-none shadow-xl bg-white rounded-[2rem] overflow-hidden group hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-10">
-                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
-                  <Heart className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-8 shadow-lg shadow-secondary/20 group-hover:scale-110 transition-transform duration-300">
+                  <Sparkles className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-heading font-black mb-6">Our Mission</h3>
+                <h3 className="text-3xl font-heading font-black mb-6">Our Vision</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                  To create a supportive community where women find comfort, guidance, and strength in their faith while rebuilding their lives with renewed purpose.
+                  Empowering women to rise above adversity and reflect God's love and hope.
                 </p>
               </CardContent>
             </Card>
@@ -175,12 +175,12 @@ const Index = () => {
           <AnimatedSection delay={200}>
             <Card className="h-full border-none shadow-xl bg-white rounded-[2rem] overflow-hidden group hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-10">
-                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-8 shadow-lg shadow-secondary/20 group-hover:scale-110 transition-transform duration-300">
-                  <Sparkles className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                  <Heart className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-heading font-black mb-6">Our Vision</h3>
+                <h3 className="text-3xl font-heading font-black mb-6">Our Mission</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                  Empowering women to rise above adversity and reflect God's love and hope.
+                  To create a supportive community where women find comfort, guidance, and strength in their faith while rebuilding their lives with renewed purpose.
                 </p>
               </CardContent>
             </Card>
